@@ -1,10 +1,9 @@
 import App from './App.html';
 
 const app = new App({
-	target: document.body,
+	target: document.querySelector('#playingfield'),
 	data: {
-		name: 'world'
-	}
+		name: 'world',
+		defenders: 2,
+	},
 });
-
-export default app;

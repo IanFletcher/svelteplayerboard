@@ -60,7 +60,7 @@ button:focus {
 	border-color: #666;
 }
 
-.field {
+#playingfield {
 	float: left;
 	display: inline-block;
 	width: 70%;
