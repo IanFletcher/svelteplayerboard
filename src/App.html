@@ -1,6 +1,6 @@
 <h1>Hello {name}!</h1>
 
-{#each people as defender}
+{#each defenderRow as defender}
 	<div class="box-3"></div>
 {/each}
 
@@ -12,14 +12,16 @@
 
 <script>
 function playerRow(players) {
-	return [...Array(5).fill().map((x,i) => i+1)]
+	return [...Array(players).fill().map((x,i) => i+1)]
 };
 export default {
 	data() {
 		return {
-			defenders: 0,
-			people: playerRow(app.get().defenders),
+			defenders: 2,
 		}
+	},
+	computed: {
+		defenderRow: ({defenders}) =>  playerRow(defenders),
 	}
 }
 </script>

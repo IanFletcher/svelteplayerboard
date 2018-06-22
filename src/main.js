@@ -4,6 +4,6 @@ const app = new App({
 	target: document.querySelector('#playingfield'),
 	data: {
 		name: 'world',
-		defenders: 2,
+		defenders: 4,
 	},
 });
