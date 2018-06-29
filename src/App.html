@@ -1,20 +1,24 @@
 <h1>Hello {name}!</h1>
 
-{#each defenderRow as defender}
-	<div class="box-3"></div>
+{#each defenderRow as defender, i}
+	<Player xname="{i}-{name}" position='Defenders'/>
 {/each}
 
 <style>
-	h1 {
-		color: purple;
-	}
+  h1 {
+    color: purple;
+  }
 </style>
 
 <script>
+import Player from './Player.html';
 function playerRow(players) {
 	return [...Array(players).fill().map((x,i) => i+1)]
 };
 export default {
+	components: {
+		Player,
+	},
 	data() {
 		return {
 			defenders: 2,
@@ -22,6 +26,6 @@ export default {
 	},
 	computed: {
 		defenderRow: ({defenders}) =>  playerRow(defenders),
-	}
+	},
 }
 </script>
